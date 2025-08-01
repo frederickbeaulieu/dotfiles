@@ -1,0 +1,40 @@
+# Customization
+theme = tokyonight_moon
+font-family = firamono nerd font
+macos-titlebar-style = tabs
+
+# Shell 
+shell-integration = zsh
+mouse-hide-while-typing = true
+
+# Window Management
+keybind = super+t=new_tab
+keybind = super+n=next_tab
+keybind = super+p=previous_tab
+
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:bottom
+keybind = super+k=goto_split:top
+keybind = super+l=goto_split:right
+
+keybind = super+shift+h=new_split:left
+keybind = super+shift+j=new_split:down
+keybind = super+shift+k=new_split:up
+keybind = super+shift+l=new_split:right
+keybind = super+shift+f=toggle_split_zoom
+
+keybind = super+shift+left=resize_split:left,10
+keybind = super+shift+right=resize_split:right,10
+keybind = super+shift+down=resize_split:down,10
+keybind = super+shift+up=resize_split:up,10
+
+window-save-state = always
+
+# Quick Terminal
+keybind = global:option+grave_accent=toggle_quick_terminal
+
+quick-terminal-screen = mouse
+quick-terminal-position = bottom
+quick-terminal-animation-duration = 0
+quick-terminal-space-behavior = remain
+quick-terminal-autohide = false
