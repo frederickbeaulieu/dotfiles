@@ -236,9 +236,21 @@ shift-down = ['volume set 0', 'mode main']
 # Window callbacks - automatically move applications to specific workspaces
 # See: https://nikitabobko.github.io/AeroSpace/guide#window-callbacks
 
+# can use  
+# [[on-window-detected]]
+# if.app-name-regex-substring = '^Warp$'
+# run = 'move-node-to-workspace W'
+# 
+
+# By app ID
+
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace C'
+if.app-id = 'com.google.android.studio'
+run = 'move-node-to-workspace A'
+
+[[on-window-detected]]
+if.app-id = 'com.docker.docker'
+run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
@@ -252,16 +264,48 @@ run = 'move-node-to-workspace G'
 if.app-id = 'com.jetbrains.intellij'
 run = 'move-node-to-workspace I'
 
-# App ID for Postman is not defined in the list
-# [[on-window-detected]]
-#     if.app-id = 'postman'
-#     run = 'move-node-to-workspace P'
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
+run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = ["layout floating", 'move-node-to-workspace T']
 
 [[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace V'
+
+[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace W'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.dt.Xcode'
+run = 'move-node-to-workspace X'
+
+# By App Name
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Bitbucket'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Teams'
+run = 'move-node-to-workspace C'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Jira'
+run = 'move-node-to-workspace J'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Outlook'
+run = 'move-node-to-workspace O'

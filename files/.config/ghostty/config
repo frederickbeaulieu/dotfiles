@@ -1,7 +1,10 @@
 # Customization
-theme = tokyonight_moon
+theme = TokyoNight Moon
 font-family = firamono nerd font
 macos-titlebar-style = tabs
+
+#Keybinds
+macos-option-as-alt = right
 
 # Shell 
 shell-integration = zsh
