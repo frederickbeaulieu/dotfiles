@@ -304,7 +304,7 @@ run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Jira'
-run = 'move-node-to-workspace J'
+run = 'move-node-to-workspace Q'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Outlook'
