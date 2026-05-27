@@ -1,0 +1,74 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "19afafda-f55a-43b0-a7c8-90a04cc8a816",
+        "type": "vim-mode",
+        "color": "brightGreen"
+      },
+      {
+        "id": "c1b3e1d3-1f78-4f2f-8e55-60760d9fe4cc",
+        "type": "separator"
+      },
+      {
+        "id": "1",
+        "type": "model",
+        "color": "brightBlue"
+      },
+      {
+        "id": "3ca95e83-6299-43fa-b2ec-ade394f88a0a",
+        "type": "separator"
+      },
+      {
+        "id": "62c25940-3f38-4798-805f-4dcbb4fba2a5",
+        "type": "thinking-effort",
+        "color": "brightBlue"
+      },
+      {
+        "id": "2",
+        "type": "separator"
+      },
+      {
+        "id": "3",
+        "type": "context-length",
+        "color": "brightMagenta"
+      },
+      {
+        "id": "5646ebf3-125b-4735-9931-8b7715f72c89",
+        "type": "separator"
+      },
+      {
+        "id": "3292afc6-30b5-4781-9a26-397dbc84da57",
+        "type": "context-percentage",
+        "color": "brightMagenta"
+      }
+    ],
+    [],
+    []
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 2,
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "minimalistMode": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [],
+    "autoAlign": false,
+    "continueThemeAcrossLines": false
+  },
+  "installation": {
+    "method": "auto-update",
+    "packageManager": "bun"
+  }
+}

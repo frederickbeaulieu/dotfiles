@@ -22,3 +22,10 @@ github-copilot/iu
 .*\.db$
 .*\.lck$
 .*\.xd$
+
+# tool state / cache / credentials — guard against future stray copies
+gcloud
+flutter
+cagent
+gh/hosts.yml
+jj/repos
