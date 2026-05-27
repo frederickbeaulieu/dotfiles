@@ -10,7 +10,17 @@ BACKUP=${DOTFILES_DIR}/backup
 BREWFILE=${DOTFILES_DIR}/Brewfile
 
 # This is the default command that will be run when you run `make` without any arguments.
-default: init stow_override backup
+default: confirm init stow_override backup
+
+# Confirm before running the full setup, which upgrades Homebrew packages and
+# overrides files in your home directory with symlinks.
+confirm:
+	@echo "This will:"; \
+	echo "  - install Brewfile dependencies and run 'brew update && brew upgrade'"; \
+	echo "  - back up and OVERRIDE conflicting files in ${HOME} with stow symlinks"; \
+	echo "  - back up your Homebrew bundle and config files"; \
+	read -p "Continue ? (y/n): " confirm; \
+	[ "$$confirm" = "y" ] || { echo "Aborting..."; exit 1; }
 
 # Install System Dependencies
 init: brew_install brew_bundle
@@ -71,4 +81,4 @@ brew_bundle:
 	brew update; \
 	brew upgrade;
 
-.PHONY: default init stow stow_test_override stow_override backup backup_homebrew backup_dotfiles brew_install brew_bundle
+.PHONY: default confirm init stow stow_test_override stow_override backup backup_homebrew backup_dotfiles brew_install brew_bundle
