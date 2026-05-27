@@ -36,8 +36,7 @@ stow_override:
 	awk '/existing target/ {for (i=1; i<=NF; i++) if ($$i == "target") print $$(i+1)}' | \
 	( cd ${HOME} && while read -r file; do \
 		echo "Backing up $$file to "$$backup_dir; \
-		rsync -a --relative $$file $$backup_dir; \
-		rm $$file; \
+		rsync -a --relative "$$file" "$$backup_dir" && rm "$$file"; \
 	done ); \
 	make stow;
 
