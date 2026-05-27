@@ -18,33 +18,34 @@ alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 alias n='nvim'
 alias cd='z'
 
-# jj autocompletion
-source <(COMPLETE=zsh jj)
-
 # NVM
 export NVM_DIR="$HOME/.nvm" # https://github.com/nvm-sh/nvm/issues/539#issuecomment-245791291
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+export PATH="$(nvm which default | xargs dirname):$PATH"
+
+#GCloud 
+export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
+
+#Dart
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+#Android dev tools
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+
+# Golang
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # ZSH Plugins
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # FZF
 source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 
-# Optimize completion loading
-autoload -Uz compinit
-if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
-    compinit
-else
-    compinit -C
-fi
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/frederickbeaulieu/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
+# syntax-highlighting must be sourced last
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Yazi
 function y() {

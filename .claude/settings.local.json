@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(make -n brew_install)",
+      "Bash(echo \"---exit=$?---\")",
+      "Bash(bash -n)",
+      "Bash(jj st *)",
+      "Bash(jj log *)",
+      "Bash(jj show *)",
+      "Bash(jj describe *)",
+      "Bash(rsync --version)",
+      "Bash(make -n backup)",
+      "Bash(make backup *)",
+      "Bash(git -C /Users/frederickbeaulieu/.dotfiles status --short Brewfile)",
+      "Bash(jj split *)",
+      "Bash(jj new *)",
+      "Bash(stow --simulate --restow files)",
+      "Bash(awk '/existing target/ {for \\(i=1; i<=NF; i++\\) if \\($i == \"target\"\\) print $\\(i+1\\)}')",
+      "Bash(make -n stow_override)",
+      "Bash(jj file *)",
+      "Bash(grep -vE \"^#|^$\")",
+      "Bash(awk '/existing target/ {for\\(i=1;i<=NF;i++\\) if\\($i==\"target\"\\) print \"  \"$\\(i+1\\)}')",
+      "Bash(awk '/existing target/ {for\\(i=1;i<=NF;i++\\) if\\($i==\"target\"\\) print $\\(i+1\\)}')",
+      "Bash(read -r f)",
+      "Bash(grep -vE \"zoxide|Please|If the|https|Disable|^$\")",
+      "Bash(cp __TRACKED_VAR__/__TRACKED_VAR__ files/__TRACKED_VAR__)",
+      "Bash(jj bookmark *)",
+      "Bash(jj git *)"
+    ]
+  }
+}

@@ -1,37 +1,49 @@
 # Customization
 theme = TokyoNight Moon
 font-family = firamono nerd font
-macos-titlebar-style = tabs
+macos-titlebar-style = hidden
+window-padding-y = 10,0
 
 #Keybinds
 macos-option-as-alt = right
 
 # Shell 
+command = /bin/zsh -l -c "/opt/homebrew/bin/zellij attach --create default"
 shell-integration = zsh
 mouse-hide-while-typing = true
 
-# Window Management
-keybind = super+t=new_tab
-keybind = super+n=next_tab
-keybind = super+p=previous_tab
-
-keybind = super+h=goto_split:left
-keybind = super+j=goto_split:bottom
-keybind = super+k=goto_split:top
-keybind = super+l=goto_split:right
-
-keybind = super+shift+h=new_split:left
-keybind = super+shift+j=new_split:down
-keybind = super+shift+k=new_split:up
-keybind = super+shift+l=new_split:right
-keybind = super+shift+f=toggle_split_zoom
-
-keybind = super+shift+left=resize_split:left,10
-keybind = super+shift+right=resize_split:right,10
-keybind = super+shift+down=resize_split:down,10
-keybind = super+shift+up=resize_split:up,10
-
-window-save-state = always
+# Let Cmd keys pass through to Zellij natively (no text: forwarding)
+# Unbind Ghostty defaults that would intercept these keys
+keybind = super+h=unbind
+keybind = super+j=unbind
+keybind = super+k=unbind
+keybind = super+l=unbind
+keybind = super+shift+h=unbind
+keybind = super+shift+j=unbind
+keybind = super+shift+k=unbind
+keybind = super+shift+l=unbind
+keybind = super+shift+f=unbind
+keybind = super+shift+left=unbind
+keybind = super+shift+right=unbind
+keybind = super+shift+down=unbind
+keybind = super+shift+up=unbind
+keybind = super+t=unbind
+keybind = super+digit_1=text:\x1b[49;9u
+keybind = super+digit_2=text:\x1b[50;9u
+keybind = super+digit_3=text:\x1b[51;9u
+keybind = super+digit_4=text:\x1b[52;9u
+keybind = super+digit_5=text:\x1b[53;9u
+keybind = super+digit_6=text:\x1b[54;9u
+keybind = super+digit_7=text:\x1b[55;9u
+keybind = super+digit_8=text:\x1b[56;9u
+keybind = super+digit_9=text:\x1b[57;9u
+keybind = super+w=unbind
+keybind = super+d=unbind
+keybind = super+g=unbind
+keybind = super+s=unbind
+keybind = super+shift+s=unbind
+keybind = super+shift+d=unbind
+keybind = super+shift+r=unbind
 
 # Quick Terminal
 keybind = global:option+grave_accent=toggle_quick_terminal

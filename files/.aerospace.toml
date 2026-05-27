@@ -279,6 +279,7 @@ run = 'move-node-to-workspace S'
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = ["layout floating", 'move-node-to-workspace T']
+# run = ['move-node-to-workspace T']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
@@ -309,3 +310,7 @@ run = 'move-node-to-workspace Q'
 [[on-window-detected]]
 if.app-name-regex-substring = 'Outlook'
 run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Linear'
+run = 'move-node-to-workspace N'
