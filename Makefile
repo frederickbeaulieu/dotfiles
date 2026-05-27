@@ -63,7 +63,7 @@ backup_dotfiles:
 brew_install:
 	@if ! command -v brew >/dev/null 2>&1; then \
 		echo "Homebrew not found. Installing..."; \
-		/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+		/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; \
 	fi
 
 brew_bundle:
@@ -71,4 +71,4 @@ brew_bundle:
 	brew update; \
 	brew upgrade;
 
-.PHONY: default init stow stow_test_override stow_override backup brew_install brew_bundle
+.PHONY: default init stow stow_test_override stow_override backup backup_homebrew backup_dotfiles brew_install brew_bundle
