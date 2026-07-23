@@ -2,7 +2,6 @@
 # Edit the template, not this file: chezmoi edit ~/.Brewfile
 
 # ── shared: every machine ──────────────────────────────────────────
-tap "dlvhdr/formulae"
 tap "felixkratz/formulae"
 tap "frederickbeaulieu/tap", "https://github.com/frederickbeaulieu/homebrew-tap.git"
 tap "nikitabobko/tap"
@@ -12,6 +11,7 @@ brew "btop"
 brew "bun"
 brew "caddy"
 brew "chezmoi"
+brew "diffnav"
 brew "doppler"
 brew "fd"
 brew "ffmpeg"
@@ -53,7 +53,6 @@ brew "zoxide"
 brew "zsh-autocomplete"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-brew "dlvhdr/formulae/diffnav"
 brew "felixkratz/formulae/sketchybar"
 
 cask "nikitabobko/tap/aerospace"
@@ -81,9 +80,9 @@ npm "corepack"
 
 {{ if eq .profile "work" -}}
 # ── work only ──────────────────────────────────────────────────────
-tap "auth0/auth0-cli"
 tap "hashicorp/tap"
 
+brew "auth0"
 brew "cocoapods"
 brew "docker"
 brew "gradle"
@@ -100,7 +99,6 @@ brew "sql-formatter"
 brew "sqlfluff"
 brew "supabase"
 brew "xcodegen"
-brew "auth0/auth0-cli/auth0"
 brew "hashicorp/tap/terraform"
 
 cask "android-commandlinetools"
