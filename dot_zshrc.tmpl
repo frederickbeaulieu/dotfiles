@@ -23,7 +23,8 @@ export NVM_DIR="$HOME/.nvm" # https://github.com/nvm-sh/nvm/issues/539#issuecomm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 export PATH="$(nvm which default | xargs dirname):$PATH"
 
-#GCloud 
+{{ if eq .profile "work" -}}
+#GCloud
 export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 
 #Dart
@@ -32,6 +33,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 #Android dev tools
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
+{{ end -}}
 # Golang
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
