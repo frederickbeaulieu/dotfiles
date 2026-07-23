@@ -18,7 +18,10 @@
 	process = git-lfs filter-process
 	required = true
 
-# Canac work identity, selected by remote URL (any remote matching)
+# Canac work identity: everything under ~/Git is work
+[includeIf "gitdir:~/Git/"]
+	path = ~/.config/git/canac
+# Backup rule: canac remotes cloned anywhere else
 [includeIf "hasconfig:remote.*.url:https://github.com/canac-org/**"]
 	path = ~/.config/git/canac
 [includeIf "hasconfig:remote.*.url:git@github.com:canac-org/**"]
