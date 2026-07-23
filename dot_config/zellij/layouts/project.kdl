@@ -13,14 +13,10 @@ layout {
         pane
     }
 
-    ui name="agents" {
-        pane split_direction="vertical" {
-            pane command="/opt/homebrew/bin/claude" size="50%" name="claude"
-            pane command="/opt/homebrew/bin/tuitui" size="50%" name="tuitui"
-        }
-    }
-
     ui name="editor" {
-        pane command="/opt/homebrew/bin/nvim" name="nvim"
+        pane split_direction="horizontal" {
+            pane command="/opt/homebrew/bin/nvim" size="80%" name="nvim"
+            pane command="/opt/homebrew/bin/tuitui" size="20%" name="tuitui"
+        }
     }
 }

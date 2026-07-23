@@ -1,0 +1,5 @@
+{{- $profile := promptStringOnce . "profile" "profile" -}}
+sourceDir = "~/.dotfiles"
+
+[data]
+    profile = {{ $profile | quote }}

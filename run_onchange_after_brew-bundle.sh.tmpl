@@ -1,0 +1,5 @@
+#!/bin/bash
+# Installs Homebrew packages whenever the rendered ~/.Brewfile changes.
+# Brewfile template hash: {{ include "dot_Brewfile.tmpl" | sha256sum }}
+set -eu
+brew bundle install --global --no-upgrade
