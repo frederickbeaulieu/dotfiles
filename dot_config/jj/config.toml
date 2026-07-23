@@ -2,4 +2,36 @@
 
 [user]
 name = "Frederick Beaulieu"
+email = "frederick.beaulieu@hotmail.com"
+
+# Canac work identity. jj cannot match remote URLs, so work repos are
+# path-scoped: add new work clones here (or `jj config set --repo user.email`).
+[[--scope]]
+--when.repositories = [
+    "~/Git/abap-dev-tools",
+    "~/Git/auth0",
+    "~/Git/cloud-commerce",
+    "~/Git/cloudinary-migration",
+    "~/Git/commercetemp",
+    "~/Git/common-api",
+    "~/Git/delivery-app",
+    "~/Git/delivery-app-tauri",
+    "~/Git/figaf",
+    "~/Git/flutter-packages",
+    "~/Git/flutter-packages.worktrees",
+    "~/Git/internal-proxy",
+    "~/Git/magento-migration",
+    "~/Git/master-data",
+    "~/Git/master-data-entry",
+    "~/Git/mobile-apps",
+    "~/Git/price-checker",
+    "~/Git/produit-canac",
+    "~/Git/produit-canac.worktrees",
+    "~/Git/retool-infra",
+    "~/Git/ses-imagotag-export",
+    "~/Git/ukg-punch",
+    "~/Git/vpn-cli",
+    "~/Git/workers-coveo",
+]
+[--scope.user]
 email = "frederick.beaulieu@canac.ca"

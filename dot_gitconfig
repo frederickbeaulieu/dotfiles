@@ -1,0 +1,33 @@
+[user]
+	email = frederick.beaulieu@hotmail.com
+	name = Frédérick Beaulieu
+	signingKey =
+[gpg]
+	program = gpg
+	format = openpgp
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
+[gpg "ssh"]
+	program =
+	allowedSignersFile =
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+# Canac work identity, selected by remote URL (any remote matching)
+[includeIf "hasconfig:remote.*.url:https://github.com/canac-org/**"]
+	path = ~/.config/git/canac
+[includeIf "hasconfig:remote.*.url:git@github.com:canac-org/**"]
+	path = ~/.config/git/canac
+[includeIf "hasconfig:remote.*.url:ssh://git@github.com/canac-org/**"]
+	path = ~/.config/git/canac
+[includeIf "hasconfig:remote.*.url:https://*bitbucket.org/canac/**"]
+	path = ~/.config/git/canac
+[includeIf "hasconfig:remote.*.url:git@bitbucket.org:canac/**"]
+	path = ~/.config/git/canac
+[includeIf "hasconfig:remote.*.url:ssh://git@bitbucket.org/canac/**"]
+	path = ~/.config/git/canac
