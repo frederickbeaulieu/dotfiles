@@ -21,6 +21,9 @@ brew install chezmoi
 chezmoi init --source ~/.dotfiles --apply frederickbeaulieu/dotfiles
 ```
 
+If Xcode is installed, accept its license first or brew installs fail en masse:
+`sudo xcodebuild -license accept`.
+
 No git login needed — the repo is public and chezmoi clones it anonymously.
 Authenticate later only to push changes back (`gh auth login`, or add an SSH
 key and point origin at `git@github.com:frederickbeaulieu/dotfiles.git`).
