@@ -51,14 +51,18 @@ Templated files: `dot_Brewfile.tmpl`, `dot_zshrc.tmpl`.
 
 ## Commit identity
 
-Directory convention decides the email, on any machine:
+Personal machines use `frederick.beaulieu@hotmail.com` everywhere — any folder
+works, `~/Git` included.
+
+On the work profile, directory convention decides:
 
 - `~/Git` → work repositories → `frederick.beaulieu@canac.ca`
 - anywhere else (`~/Perso`, `~/.dotfiles`, …) → `frederick.beaulieu@hotmail.com`
 
-git: `gitdir:~/Git/` include in `dot_gitconfig` (plus a backup rule matching
-canac remotes cloned elsewhere). jj: path scope in `dot_config/jj/config.toml`.
-New work clones just need to land in `~/Git` — no config edits.
+git: `gitdir:~/Git/` include in `dot_gitconfig.tmpl` (plus a backup rule
+matching canac remotes cloned elsewhere). jj: path scope in
+`dot_config/jj/config.toml.tmpl`. New work clones just need to land in
+`~/Git` — no config edits.
 
 ## Daily use
 

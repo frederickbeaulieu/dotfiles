@@ -18,6 +18,7 @@
 	process = git-lfs filter-process
 	required = true
 
+{{ if eq .profile "work" -}}
 # Canac work identity: everything under ~/Git is work
 [includeIf "gitdir:~/Git/"]
 	path = ~/.config/git/canac
@@ -34,3 +35,4 @@
 	path = ~/.config/git/canac
 [includeIf "hasconfig:remote.*.url:ssh://git@bitbucket.org/canac/**"]
 	path = ~/.config/git/canac
+{{ end -}}

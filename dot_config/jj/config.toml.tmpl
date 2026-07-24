@@ -4,8 +4,10 @@
 name = "Frederick Beaulieu"
 email = "frederick.beaulieu@hotmail.com"
 
-# Canac work identity: everything under ~/Git is work, personal lives in ~/Perso
+{{ if eq .profile "work" -}}
+# Canac work identity: everything under ~/Git is work
 [[--scope]]
 --when.repositories = ["~/Git"]
 [--scope.user]
 email = "frederick.beaulieu@canac.ca"
+{{ end -}}
