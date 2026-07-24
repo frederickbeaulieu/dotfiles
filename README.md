@@ -17,10 +17,13 @@ macOS configuration managed with [chezmoi](https://www.chezmoi.io/), with work/p
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install chezmoi
 
-# 2. Clone and apply (prompts for profile: work or personal)
-git clone https://github.com/frederickbeaulieu/dotfiles.git ~/.dotfiles
-chezmoi init --source ~/.dotfiles --apply
+# 2. Clone + apply in one go (prompts for profile: work or personal)
+chezmoi init --source ~/.dotfiles --apply frederickbeaulieu/dotfiles
 ```
+
+No git login needed — the repo is public and chezmoi clones it anonymously.
+Authenticate later only to push changes back (`gh auth login`, or add an SSH
+key and point origin at `git@github.com:frederickbeaulieu/dotfiles.git`).
 
 `chezmoi apply` writes configs to `$HOME`, renders `~/.Brewfile` for the chosen
 profile, and runs `brew bundle` automatically whenever the Brewfile changes.
