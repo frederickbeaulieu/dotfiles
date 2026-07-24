@@ -1,0 +1,12 @@
+{
+  "trustedtaps": [
+    "felixkratz/formulae",
+    "frederickbeaulieu/tap",
+    "hashicorp/tap",
+    "nikitabobko/tap"
+  ],
+  "trustedformulae": [
+    "felixkratz/formulae/sketchybar",
+    "hashicorp/tap/terraform"
+  ]
+}

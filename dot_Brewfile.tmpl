@@ -2,9 +2,9 @@
 # Edit the template, not this file: chezmoi edit ~/.Brewfile
 
 # ── shared: every machine ──────────────────────────────────────────
-tap "felixkratz/formulae"
-tap "frederickbeaulieu/tap", "https://github.com/frederickbeaulieu/homebrew-tap.git"
-tap "nikitabobko/tap"
+tap "felixkratz/formulae", trusted: true
+tap "frederickbeaulieu/tap", "https://github.com/frederickbeaulieu/homebrew-tap.git", trusted: true
+tap "nikitabobko/tap", trusted: true
 
 brew "bat"
 brew "btop"
@@ -80,7 +80,7 @@ npm "corepack"
 
 {{ if eq .profile "work" -}}
 # ── work only ──────────────────────────────────────────────────────
-tap "hashicorp/tap"
+tap "hashicorp/tap", trusted: true
 
 brew "auth0"
 brew "cocoapods"
