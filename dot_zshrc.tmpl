@@ -13,15 +13,24 @@ export EDITOR=nvim
 bindkey -v
 
 # Aliases
-alias node='unalias node ; unalias npm ; nvm use default ; node $@'
-alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 alias n='nvim'
 alias cd='z'
 
-# NVM
+# NVM — brew layout first, curl-installer layout as fallback
 export NVM_DIR="$HOME/.nvm" # https://github.com/nvm-sh/nvm/issues/539#issuecomment-245791291
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-export PATH="$(nvm which default | xargs dirname):$PATH"
+[ -d "$NVM_DIR" ] || mkdir -p "$NVM_DIR"
+if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+  . "/opt/homebrew/opt/nvm/nvm.sh" --no-use
+elif [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh" --no-use
+fi
+# Only wire nvm's default node into PATH/aliases once one exists
+# (fresh machine: brew node serves until `nvm install --default <ver>`)
+if command -v nvm >/dev/null 2>&1 && [ "$(nvm version default 2>/dev/null)" != "N/A" ]; then
+  export PATH="$(nvm which default | xargs dirname):$PATH"
+  alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+  alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
+fi
 
 {{ if eq .profile "work" -}}
 #GCloud
