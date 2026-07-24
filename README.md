@@ -7,7 +7,7 @@ macOS configuration managed with [chezmoi](https://www.chezmoi.io/), with work/p
 - **Terminal**: Zsh, Starship prompt, Ghostty, Zellij
 - **Editors**: Neovim (LazyVim, vendored); VS Code extensions on the work profile only
 - **Desktop**: AeroSpace tiling WM, SketchyBar status bar
-- **Packages**: Homebrew formulae/casks, Mac App Store apps, VS Code extensions, Go/npm tools — profiled per machine via the `~/.Brewfile` template
+- **Packages**: Homebrew formulae/casks, VS Code extensions, Go/npm tools — profiled per machine via the `~/.Brewfile` template
 - **Identity**: git and jj commit email switch automatically between work and personal
 
 ## New machine setup
