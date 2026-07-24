@@ -38,7 +38,7 @@ keybinds clear-defaults=true {
         }
         // Sessionizer (open project sessions): Super + Shift + s
         bind "Shift Super s" {
-            LaunchOrFocusPlugin "file:/Users/frederickbeaulieu/.config/zellij/plugins/zellij-sessionizer.wasm" {
+            LaunchOrFocusPlugin "file:{{ .chezmoi.homeDir }}/.config/zellij/plugins/zellij-sessionizer.wasm" {
                 floating true
                 cwd "/"
                 root_dirs "/Users/frederickbeaulieu/Git"
