@@ -33,11 +33,11 @@
     "context7@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "github@claude-plugins-official": true,
-    "gitkraken-hooks@gitkraken": true,
     "gopls-lsp@claude-plugins-official": true,
-    "jdtls-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true{{ if eq .profile "work" }},
+    "gitkraken-hooks@gitkraken": true,
+    "jdtls-lsp@claude-plugins-official": true{{ end }}
   },
   "extraKnownMarketplaces": {
     "caveman": {
@@ -45,13 +45,13 @@
         "source": "github",
         "repo": "JuliusBrussee/caveman"
       }
-    },
+    }{{ if eq .profile "work" }},
     "gitkraken": {
       "source": {
         "source": "directory",
         "path": "{{ .chezmoi.homeDir }}/.claude/plugins/marketplaces/gitkraken"
       }
-    }
+    }{{ end }}
   },
   "spinnerVerbs": {
     "mode": "replace",
