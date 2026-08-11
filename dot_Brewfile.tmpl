@@ -74,6 +74,7 @@ go "golang.org/x/tools/cmd/deadcode"
 {{ if eq .profile "work" -}}
 # ── work only ──────────────────────────────────────────────────────
 tap "hashicorp/tap", trusted: true
+tap "mobile-dev-inc/tap", trusted: true
 
 brew "auth0"
 brew "cocoapods"
@@ -92,6 +93,7 @@ brew "sqlfluff"
 brew "supabase"
 brew "xcodegen"
 brew "hashicorp/tap/terraform"
+brew "mobile-dev-inc/tap/maestro"
 
 cask "android-commandlinetools"
 cask "android-ndk"
