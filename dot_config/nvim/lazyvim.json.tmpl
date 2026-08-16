@@ -1,7 +1,7 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.claudecode",
-    "lazyvim.plugins.extras.coding.mini-surround",
+{{ if eq .profile "work" }}    "lazyvim.plugins.extras.ai.claudecode",
+{{ end }}    "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.fzf",
     "lazyvim.plugins.extras.editor.inc-rename",
