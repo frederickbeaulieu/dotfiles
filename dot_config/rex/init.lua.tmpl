@@ -1,0 +1,24 @@
+{{ if eq .profile "personal" -}}
+-- Keybinds mirrored from ghostty
+
+rex.bind("cmd+t", "client.tab.new")
+rex.bind("cmd+n", "client.tab.next")
+rex.bind("cmd+p", "client.tab.previous")
+
+rex.bind("cmd+h", "pane.focus", { direction = "left" })
+rex.bind("cmd+j", "pane.focus", { direction = "down" })
+rex.bind("cmd+k", "pane.focus", { direction = "up" })
+rex.bind("cmd+l", "pane.focus", { direction = "right" })
+
+rex.bind("shift+cmd+h", "pane.split", { direction = "left" })
+rex.bind("shift+cmd+j", "pane.split", { direction = "down" })
+rex.bind("shift+cmd+k", "pane.split", { direction = "up" })
+rex.bind("shift+cmd+l", "pane.split", { direction = "right" })
+
+rex.bind("shift+cmd+f", "pane.zoom")
+
+rex.bind("shift+cmd+left", "pane.resize", { direction = "left", amount = 10 })
+rex.bind("shift+cmd+right", "pane.resize", { direction = "right", amount = 10 })
+rex.bind("shift+cmd+down", "pane.resize", { direction = "down", amount = 10 })
+rex.bind("shift+cmd+up", "pane.resize", { direction = "up", amount = 10 })
+{{ end -}}
