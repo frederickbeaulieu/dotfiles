@@ -23,4 +23,20 @@ rex.bind("shift+cmd+up", "pane.resize", { direction = "up", amount = 10 })
 
 rex.bind("cmd+s", "session.switch")
 rex.bind("shift+cmd+r", "session.rename")
-rex.bind("cmd+g", "pane.new_floating")
+rex.bind("shift+cmd+t", "client.tab.rename")
+
+-- Sessions
+rex.bind("shift+cmd+n", "session.next")
+rex.bind("shift+cmd+p", "session.previous")
+rex.bind("shift+cmd+s", "pane.go_to_directory")
+
+-- Floating panes: cmd+g shows/hides them, shift+cmd+g creates one
+rex.bind("cmd+g", "pane.minimize_all_floating")
+rex.bind("shift+cmd+g", "pane.new_floating")
+
+-- Panes
+rex.bind("shift+cmd+=", "pane.balance")
+rex.bind("ctrl+cmd+h", "pane.move", { direction = "left" })
+rex.bind("ctrl+cmd+j", "pane.move", { direction = "down" })
+rex.bind("ctrl+cmd+k", "pane.move", { direction = "up" })
+rex.bind("ctrl+cmd+l", "pane.move", { direction = "right" })
