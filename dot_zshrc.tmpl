@@ -16,21 +16,28 @@ bindkey -v
 alias n='nvim'
 alias cd='z'
 
-# NVM — brew layout first, curl-installer layout as fallback
+# NVM (Homebrew) — lazy-loaded (calling nvm at startup cost ~650ms per shell).
+# The default node's bin dir goes on PATH directly from nvm's alias files;
+# nvm itself is sourced the first time `nvm` runs.
+# Fresh machine: no versions installed → nothing added, brew node serves
+# until `nvm install --default <ver>`.
 export NVM_DIR="$HOME/.nvm" # https://github.com/nvm-sh/nvm/issues/539#issuecomment-245791291
 [ -d "$NVM_DIR" ] || mkdir -p "$NVM_DIR"
-if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
-  . "/opt/homebrew/opt/nvm/nvm.sh" --no-use
-elif [ -s "$NVM_DIR/nvm.sh" ]; then
-  . "$NVM_DIR/nvm.sh" --no-use
-fi
-# Only wire nvm's default node into PATH/aliases once one exists
-# (fresh machine: brew node serves until `nvm install --default <ver>`)
-if command -v nvm >/dev/null 2>&1 && [ "$(nvm version default 2>/dev/null)" != "N/A" ]; then
-  export PATH="$(nvm which default | xargs dirname):$PATH"
-  alias node='unalias node ; unalias npm ; nvm use default ; node $@'
-  alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
-fi
+() {
+  local def=default bins i
+  for i in {1..5}; do   # follow alias chain: default -> lts/* -> lts/<name> -> vX.Y.Z
+    [[ -f $NVM_DIR/alias/$def ]] || break
+    def=$(<$NVM_DIR/alias/$def)
+  done
+  bins=($NVM_DIR/versions/node/v${def#v}*/bin(N/nOn))         # exact or partial ("24")
+  (( $#bins )) || bins=($NVM_DIR/versions/node/v*/bin(N/nOn)) # fallback: newest installed
+  (( $#bins )) && path=($bins[1] $path)
+}
+nvm() {
+  unfunction nvm
+  . /opt/homebrew/opt/nvm/nvm.sh --no-use
+  nvm "$@"
+}
 
 {{ if eq .profile "work" -}}
 #GCloud
@@ -46,6 +53,11 @@ export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 # Golang
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+
+# Docker CLI completions — must be on fpath before zsh-autocomplete, which
+# runs compinit itself (don't call compinit here; Docker Desktop's appended
+# `compinit` block ran it a second time on every shell).
+[[ -d $HOME/.docker/completions ]] && fpath=($HOME/.docker/completions $fpath)
 
 # ZSH Plugins
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
