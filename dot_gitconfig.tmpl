@@ -1,5 +1,9 @@
 [user]
+{{- if eq .profile "work" }}
+	email = frederick.beaulieu@canac.ca
+{{- else }}
 	email = frederick.beaulieu@hotmail.com
+{{- end }}
 	name = Frédérick Beaulieu
 	signingKey =
 [gpg]
@@ -36,3 +40,11 @@
 [includeIf "hasconfig:remote.*.url:ssh://git@bitbucket.org/canac/**"]
 	path = ~/.config/git/canac
 {{ end -}}
+# GitHub HTTPS auth via gh (token lives in the macOS keychain, not here).
+# The empty helper clears inherited helpers (e.g. osxkeychain).
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
