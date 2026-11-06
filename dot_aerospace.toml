@@ -282,6 +282,10 @@ run = ["layout floating", 'move-node-to-workspace T']
 # run = ['move-node-to-workspace T']
 
 [[on-window-detected]]
+if.app-id = 'com.superlogical.rex'
+run = 'move-node-to-workspace T'
+
+[[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace V'
 
