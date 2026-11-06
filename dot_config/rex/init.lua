@@ -1,4 +1,3 @@
-{{ if eq .profile "personal" -}}
 -- Keybinds mirrored from ghostty
 
 rex.bind("cmd+t", "client.tab.new")
@@ -21,4 +20,7 @@ rex.bind("shift+cmd+left", "pane.resize", { direction = "left", amount = 10 })
 rex.bind("shift+cmd+right", "pane.resize", { direction = "right", amount = 10 })
 rex.bind("shift+cmd+down", "pane.resize", { direction = "down", amount = 10 })
 rex.bind("shift+cmd+up", "pane.resize", { direction = "up", amount = 10 })
-{{ end -}}
+
+rex.bind("cmd+s", "session.switch")
+rex.bind("shift+cmd+r", "session.rename")
+rex.bind("cmd+g", "pane.new_floating")
