@@ -29,6 +29,7 @@ rex.bind("shift+cmd+t", "client.tab.rename")
 rex.bind("shift+cmd+n", "session.next")
 rex.bind("shift+cmd+p", "session.previous")
 rex.bind("shift+cmd+s", "pane.go_to_directory")
+rex.bind("ctrl+cmd+w", "session.close")
 
 -- Floating panes: cmd+g shows/hides them, shift+cmd+g creates one
 rex.bind("cmd+g", "pane.minimize_all_floating")
